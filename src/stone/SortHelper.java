@@ -90,11 +90,9 @@ public class SortHelper {
             sortMethod.invoke(null, params);
             long endTime = System.currentTimeMillis();
 
-            System.out.println(sortClass.getSimpleName() + " : " + (endTime - startTime));
-
             assert isSorted(arr);
 
-//            System.out.println(sortClass.getSimpleName() + " : " + (endTime - startTime) + "ms");
+            System.out.println(sortClass.getSimpleName() + " : " + (endTime - startTime) + "ms");
         } catch (Exception e) {
             e.printStackTrace();
         }
