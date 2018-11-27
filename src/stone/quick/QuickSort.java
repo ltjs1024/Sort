@@ -1,6 +1,7 @@
 package stone.quick;
 
 import stone.SortHelper;
+import stone.insert.InsertionSort;
 
 /**
  * 快速排序
@@ -15,7 +16,11 @@ public class QuickSort {
 
     // 对arr[lo...hi]进行快速排序
     private static void sort(Comparable[] arr, int lo, int hi) {
-        if (lo >= hi) {
+//        if (lo >= hi) {
+//            return;
+//        }
+        if (hi - lo <= 15) {
+            InsertionSort.sort(arr, lo, hi);
             return;
         }
         // 对arr[lo...hi]进行partition操作，返回p
@@ -27,6 +32,7 @@ public class QuickSort {
     }
 
     private static int partition(Comparable[] arr, int lo, int hi) {
+        SortHelper.swap(arr, lo, (int) (Math.random() * (hi - lo + 1)) + lo);
         Comparable v = arr[lo];
         int p = lo;
         for (int i = lo + 1; i <= hi; i++) {
