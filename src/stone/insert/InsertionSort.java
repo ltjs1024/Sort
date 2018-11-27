@@ -17,6 +17,10 @@ public class InsertionSort {
         binaryInsertSort(arr, 0, arr.length - 1);
     }
 
+    public static void sort(Comparable[] arr, int lo, int hi) {
+        binaryInsertSort(arr, lo, hi);
+    }
+
     // 对arr[left...right]进行插入排序
     private static void sort1(Comparable[] arr, int left, int right) {
         for (int i = left + 1; i <= right; i++) {
@@ -65,7 +69,7 @@ public class InsertionSort {
                 arr[j] = arr[j - 1];
             }
             arr[low] = v;
-            System.out.println(SortHelper.toString(arr));
+//            System.out.println(SortHelper.toString(arr));
         }
     }
 
